@@ -1,0 +1,64 @@
+<section>
+<h4>Acerca de</h4>
+<div class="container" id="main-container">
+<div *ngFor="let a of acercas">
+    <div class="row">
+    <div class="col-2">
+        <img src={{a.imageUrl}} style="width: 90%"> 
+        <p></p>
+    </div>
+    <div class="col-9">
+        <p>{{a.descripcion1}}<br/>
+        {{a.descripcion2}}<br/>
+        {{a.descripcion3}}</p>
+    </div> 
+    <div class="col-1">
+        <button (click)="onOpenModal(null!,'add')" type="button"> <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="float: right; width: 60px;"></button>
+        <button (click)="onOpenModal(null!,'add')" type="button"> <img src="https://i.ibb.co/KKCjmhB/Eliminar.png" style="float: right; width: 60px;"></button>
+    </div>
+    </div>
+</div>
+</div>
+
+<!--Modal para agregar comentarios - agregado 17/06 -->
+
+<div class="modal fade" id="addAcerca" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addAcercaModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Agregar descripción</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #addForm="ngForm" (ngSubmit)="onAddAcerca(addForm)">
+                    <label for="descripcion1">Descripción</label><br>
+                    <input ngModel type="text" name="descripcion1"  class="form-control">
+                    <div class="modal-footer">
+                        <button  type="button" id="add-acerca-modal" class="btn" data-dismiss="modal">Cancelar</button>
+                        <button [disabled]="addForm.invalid" type="submit" class="btn">Agregar</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--<div class="row">
+    <div class="col-2">
+        <img src="../../../assets/imagenes/Perfil.png" style="width: 90%"> 
+        <p></p>
+    </div>
+    <div class="col-9">
+        <p>Soy un ser brishante sobre el mic<br/>
+        Actualmente empleado en el Ente Nacional Regulador del Gas<br/>
+        Siempre listo para aprender boludeces nuevas</p>
+    </div> 
+    <div class="col-1">
+        <img src="../../../assets/imagenes/editar.jpg" style="float: right; width: 60px;">
+        <img src="../../../assets/imagenes/Eliminar.png" style="float: right; width: 60px;">
+    </div>
+</div>-->
+</section>

@@ -1,0 +1,11 @@
+#banner {
+    position: relative;
+}
+
+#texto {
+    position:absolute;
+    top: 40%;
+    right: 5%;
+    text-align: right
+}
+

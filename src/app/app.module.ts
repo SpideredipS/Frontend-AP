@@ -12,7 +12,6 @@ import { ProyectosComponent } from './component/proyectos/proyectos.component';
 import { CursosComponent } from './component/cursos/cursos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { PersonaComponent } from './persona/persona.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { PersonaComponent } from './persona/persona.component';
     SkillsComponent,
     ProyectosComponent,
     CursosComponent,
-    PersonaComponent
   ],
   imports: [
     BrowserModule,
