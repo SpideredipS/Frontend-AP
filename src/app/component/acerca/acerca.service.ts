@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Acerca } from './acerca';
 import { environment } from 'src/environments/environment';
 
-
 @Injectable({providedIn: 'root'}) 
 export class AcercaService {
   private apiServerUrl = environment.apiBaseUrl;

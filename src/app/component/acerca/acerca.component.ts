@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AcercaService } from './acerca.service';
 import { Acerca } from './acerca';
+import { AcercaService } from './acerca.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./acerca.component.css']
 })
 
-  export class AcercaComponent implements OnInit {
+export class AcercaComponent implements OnInit {
 
   public acercas: Acerca[] = [];
   public editAcerca!: Acerca;
@@ -77,7 +77,7 @@ import { NgForm } from '@angular/forms';
     }
   )
   
-}
+  }
 
 
   //Agregado 04/06
