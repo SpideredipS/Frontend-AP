@@ -33,8 +33,6 @@ export class AcercaComponent implements OnInit {
     );
   }
 
-  //Agregado 17/06
-
   public onAddAcerca(addForm: NgForm):void {
     document.getElementById('add-acerca-modal')?.click();
     this.acercaService.addAcerca(addForm.value).subscribe(
@@ -78,9 +76,6 @@ export class AcercaComponent implements OnInit {
   )
   
   }
-
-
-  //Agregado 04/06
 
   public onOpenModal(acerca: Acerca, mode: string): void{
     const container = document.getElementById('main-container');

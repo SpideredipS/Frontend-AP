@@ -1,29 +1,6 @@
 <section>
     <h4>Acerca de mi</h4>
     <p></p>
-<!--    <div class="row">
-        <div class="col-11">
-            <h4>Acerca de</h4>
-        </div>
-        <div class="col-1">
-            <button (click)="onOpenModal(null!,'add')" type="button"> 
-                <img src="https://i.ibb.co/z2VQ9V8/Agregar.png" alt="Agregar" style="float: right; width: 50px;">
-            </button>
-        </div>
-    </div>
-
-    <p></p>
-
--->
-
-<!--<div>
-    <button (click)="onOpenModal(null!,'add')" type="button"> 
-        <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="float: right; width: 60px;">
-    </button>
-    <button (click)="onOpenModal(null!,'edit')" type="button"> 
-        <img src="https://i.ibb.co/KKCjmhB/Eliminar.png" style="float: right; width: 60px;">
-    </button>
-</div>-->
 
 <div class="container-fluid" id="main-container">
 <div *ngFor="let a of acercas">
@@ -39,11 +16,8 @@
     </div> 
     <div class="col-1">
         <button (click)="onOpenModal(a,'edit')" type="button"> 
-            <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="float: right; width: 50px;">
+            <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="float: right; width: 40px;">
         </button>
-    <!--    <button (click)="onOpenModal(a,'edit')" type="button"> 
-            <img src="https://i.ibb.co/KKCjmhB/Eliminar.png" style="float: right; width: 50px;">
-        </button>-->
     </div>
     </div>
 </div>
@@ -62,14 +36,18 @@
             </div>
             <div class="modal-body">
                 <form #editForm="ngForm">
-                    <label for="imageUrl">URL Imagen</label><br>
+                    <label for="imageUrl">Foto</label><br>
                     <input ngModel="{{editAcerca?.imageUrl}} " type="text" name="imageUrl" class="form-control">
+                    
                     <label for="descripcion1">1º texto</label><br>
                     <input ngModel="{{editAcerca?.descripcion1}}" type="text" name="descripcion1"  class="form-control">
+                    
                     <label for="descripcion2">2º texto</label><br>
-                    <input ngModel="{{editAcerca?.descripcion2}" type="text" name="descripcion2"  class="form-control">
+                    <input ngModel="{{editAcerca?.descripcion2}}" type="text" name="descripcion2"  class="form-control">
+
                     <label for="descripcion3">3º texto</label><br>
-                    <input ngModel="{{editAcerca?.descripcion3}" type="text" name="descripcion3"  class="form-control">
+                    <input ngModel="{{editAcerca?.descripcion3}}" type="text" name="descripcion3"  class="form-control">
+                    
                     <input type="hidden" name="id" ngModel="{{editAcerca?.id}} "><br>
                     <div class="modal-footer">
                         <button id="update-acerca-modal" type="button" class="btn" data-dismiss="modal">Cancelar</button>
@@ -84,49 +62,5 @@
         </div>
     </div>
 </div>
-<!--Modal para agregar comentarios - agregado 17/06 
 
-<div class="modal fade" id="addAcercaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addAcercaModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Agregar descripción</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form #addForm="ngForm" (ngSubmit)="onAddAcerca(addForm)">
-                    <label for="descripcion1">Descripción</label><br>
-                    <input ngModel type="text" name="descripcion1"  class="form-control">
-                    <div class="modal-footer">
-                        <button  type="button" id="add-acerca-modal" class="btn" data-dismiss="modal">Cancelar</button>
-                        <button [disabled]="addForm.invalid" type="submit" class="btn">Agregar</button>
-                    </div>
-                </form>
-            </div>
-            
-        </div>
-    </div>
-</div> -->
-
-<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<div class="row">
-    <div class="col-2">
-        <img src="../../../assets/imagenes/Perfil.png" style="width: 90%"> 
-        <p></p>
-    </div>
-    <div class="col-9">
-        <p>Soy un ser brishante sobre el mic<br/>
-        Actualmente empleado en el Ente Nacional Regulador del Gas<br/>
-        Siempre listo para aprender boludeces nuevas</p>
-    </div> 
-    <div class="col-1">
-        <img src="../../../assets/imagenes/editar.jpg" style="float: right; width: 60px;">
-        <img src="../../../assets/imagenes/Eliminar.png" style="float: right; width: 60px;">
-    </div>
-</div>-->
 </section>

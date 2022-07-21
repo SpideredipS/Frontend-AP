@@ -1,22 +1,126 @@
 <section>
-    <h4>Cursos</h4>
     <div class="row">
-        <div class="col-2">
-        <img src="../../../assets/imagenes/Iram.jpg" style="width: 90%"> 
-        <p></p>
+        <div class="col-11">
+            <h4>Cursos</h4>
         </div>
-        <div class="col-9">
-            <h5>IRAM - Instituto Argentino de Normalización y Certificación</h5>
-            <li>Metrología - Calidad de las Mediciones - Requisitos de las Normas Internacionales</li> 
-            <li>ISO 9000 para Pymes- Introducción a las normas e Implementación</li> 
-            <li>Formación de auditores Internos del sistema de la Calidad</li> 
-            <li>Validación de Software de Laboratorio</li> 
-            <li>Calidad en Laboratorios- Introducción a la Norma IRAM 301 (ISO/IEC 17025)</li> 
-            <li>Formación de Auditores Internos de Sistemas de la Calidad en Laboratorios</li>
-        </div> 
         <div class="col-1">
-            <img src="../../../assets/imagenes/editar.jpg" style="float: right; width: 60px;">
-            <img src="../../../assets/imagenes/Eliminar.png" style="float: right; width: 60px;">
+            <button (click)="onOpenModal(null!,'add')" type="button"> 
+                <img src="https://i.ibb.co/z2VQ9V8/Agregar.png" alt="Agregar" style="float: right; width: 40px;">
+            </button>
         </div>
-    </div> 
+        <p></p>
+    </div>
+
+    <div id="main-container">
+        <div *ngFor="let cur of cursos">
+            <div class="row">
+            <div class="col-2">
+                <img src={{cur.imageUrl}} style="width: 90%"> 
+                <p></p>
+            </div>
+            <div class="col-9">
+                <h5><b>Establecimiento:</b> {{cur.establecimiento}}<br/></h5>
+                <p> <b>Cursos:</b> {{cur.curso}}<br/>
+            </div> 
+            <div class="col-1">
+                <button (click)="onOpenModal(cur,'edit')" type="button"> 
+                    <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="float: left; width: 40px;">
+                </button>
+                <button (click)="onOpenModal(cur,'delete')" type="button"> 
+                    <img src="https://i.ibb.co/KKCjmhB/Eliminar.png" style="float: right; width: 40px;">
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
 </section>
+
+<!--Modal para agregar cursos --> 
+        
+<div class="modal fade" id="addCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addCursosModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Agregar cursos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #addForm="ngForm" (ngSubmit)="onAddCursos(addForm)">
+                    <label for="establecimiento">Establecimiento</label><br>
+                    <input ngModel type="text" name="establecimiento"  class="form-control">
+                    
+                    <label for="curso">Cursos</label><br>
+                    <input ngModel type="text" name="curso"  class="form-control">
+                    
+                    <label for="imageUrl">Logo establecimiento</label><br>
+                    <input ngModel type="text" name="imageUrl"  class="form-control">
+                    
+                    <div class="modal-footer">
+                        <button  type="button" id="add-curso-modal" class="btn" data-dismiss="modal">Cancelar</button>
+                        <button [disabled]="addForm.invalid" type="submit" class="btn">Agregar</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div> 
+
+<!-- Modal para editar cursos -->
+        
+<div class="modal fade" id="updateCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="updateCursosModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Editar Cursos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #editForm="ngForm">
+                    <label for="imageUrl">Logo establecimiento</label><br>
+                    <input ngModel="{{editCursos?.imageUrl}} " type="text" name="imageUrl" class="form-control">
+                    
+                    <label for="establecimiento">Establecimiento</label><br>
+                    <input ngModel="{{editCursos?.establecimiento}}" type="text" name="establecimiento"  class="form-control">
+                    
+                    <label for="curso">Cursos</label><br>
+                    <input ngModel="{{editCursos?.curso}}" type="text" name="curso"  class="form-control">
+                    
+                    <input type="hidden" name="id" ngModel="{{editCursos?.id}} "><br>
+                    <div class="modal-footer">
+                        <button id="update-curso-modal" type="button" class="btn" data-dismiss="modal">Cancelar</button>
+                        <button (click)="onUpdateCursos(editForm.value)" type="button" class="btn" data-dismiss="modal">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Modal para borrar cursos-->
+    <div class="modal fade" id="deleteCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteCursosModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Esta acción eliminará sus cursos en "{{deleteCursos?.establecimiento}}". ¿Desea continuar?</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">No</button>
+                <button (click)="onDeleteCursos(deleteCursos.id)" type="button" class="btn" data-dismiss="modal">Sí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
