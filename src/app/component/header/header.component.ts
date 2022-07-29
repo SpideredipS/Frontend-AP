@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-header',
@@ -8,20 +7,12 @@ import { LoginService } from '../login/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public isUserLogged: Boolean = false;
+    constructor() { }
 
-  constructor(
-    private loginService : LoginService
-  ) { }
-
-  ngOnInit(): any {
-    this.isUserLogged = this.loginService.isUserLogged();
+  ngOnInit(): void {
+    
   }
 
-  public logOut():void {
-    this.loginService.logout();
-    this.isUserLogged = false;
-    window.location.reload();
-  }
+  
 
 }
