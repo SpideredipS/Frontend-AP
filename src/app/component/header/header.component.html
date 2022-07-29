@@ -16,9 +16,19 @@
             <a class="nav-link" href="https://www.facebook.com/jorge.grasso1/" target="_blank"><img src="https://i.ibb.co/KqMzdMY/FB.png" alt="Facebook" height="50"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><img src="https://i.ibb.co/M29fBR9/Login.png" alt="Login"  height="50"></a>
+            
+            <!--<a class="nav-link" href="#"><img src="https://i.ibb.co/M29fBR9/Login.png" alt="Login"  height="50"></a>-->
+            <button class=btn *ngIf="!isUserLogged" routerLink="/login" title="Inicia sesion para editar"><img src="https://i.ibb.co/M29fBR9/Login.png" alt="Login"  height="50"></button>
+            <button class=btn *ngIf="isUserLogged" (click)="logOut()" title="Cerrar sesion"><img src="https://i.ibb.co/B6pcVw2/Logout.jpg" alt="Login" height="50"></button>
           </li>
+        <!--  <button *ngIf="!isUserLogged" class="btn" routerLink="/login" data-bs-toggle="modal" data-bs-target="#modalLogin" title="Inicia sesion para editar"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+        <button class="btn" *ngIf="isUserLogged" (click)="logOut()" data-bs-toggle="modal" data-bs-target="#modalLogin" title="Cerrar sesion"><i class="fa-solid fa-right-from-bracket"></i></button>-->
         </ul>
+        
       </div>
+
     </div>
+    
 </nav>
+
+

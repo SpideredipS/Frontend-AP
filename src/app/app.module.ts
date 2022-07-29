@@ -11,8 +11,10 @@ import { SkillsComponent } from './component/skills/skills.component';
 import { ProyectosComponent } from './component/proyectos/proyectos.component';
 import { CursosComponent } from './component/cursos/cursos.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonaComponent } from './component/persona/persona.component';
+import { LoginComponent } from './component/login/login.component';
+
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { PersonaComponent } from './component/persona/persona.component';
     SkillsComponent,
     ProyectosComponent,
     CursosComponent,
+    LoginComponent,
     PersonaComponent,
   ],
   imports: [
@@ -33,6 +36,7 @@ import { PersonaComponent } from './component/persona/persona.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
