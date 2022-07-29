@@ -12,8 +12,7 @@ import { ProyectosComponent } from './component/proyectos/proyectos.component';
 import { CursosComponent } from './component/cursos/cursos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PersonaComponent } from './component/persona/persona.component';
-import { LoginComponent } from './component/login/login.component';
+
 
 
 
@@ -28,8 +27,6 @@ import { LoginComponent } from './component/login/login.component';
     SkillsComponent,
     ProyectosComponent,
     CursosComponent,
-    LoginComponent,
-    PersonaComponent,
   ],
   imports: [
     BrowserModule,
