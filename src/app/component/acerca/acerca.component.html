@@ -3,28 +3,27 @@
     <p></p>
 
 <div class="container-fluid" id="main-container">
-<div *ngFor="let a of acercas">
-    <div class="row">
-    <div class="col-2">
-        <img src={{a.imageUrl}} style="width: 90%"> 
-        <p></p>
-    </div>
-    <div class="col-9">
-        <p>{{a.descripcion1}}<br/>
-        {{a.descripcion2}}<br/>
-        {{a.descripcion3}}</p>
-    </div> 
-    <div class="col-1">
-        <button (click)="onOpenModal(a,'edit')" type="button"> 
-            <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="width: 30px;">
-        </button>
-    </div>
+    <div *ngFor="let a of acercas">
+        <div class="row">
+            <div class="col-2">
+                <img src={{a.imageUrl}} style="width: 90%"> 
+                <p></p>
+            </div>
+            <div class="col-9">
+                <p>{{a.descripcion1}}<br/>
+                {{a.descripcion2}}<br/>
+                {{a.descripcion3}}</p>
+            </div> 
+            <div class="col-1">
+                <button (click)="onOpenModal(a,'edit')" type="button"> 
+                    <img src="https://i.ibb.co/SNzNJM5/editar.jpg" style="width: 30px;">
+                </button>
+            </div>
+        </div>
     </div>
 </div>
-</div>
 
-<!-- Modal para editar descripción Acerca de mi -->
-
+<!-- Editar descripción Acerca de mi -->
 <div class="modal fade" id="updateAcercaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="updateAcercaModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -55,10 +54,6 @@
                     </div>
                 </form>
             </div>
-            
-            
-            
-            
         </div>
     </div>
 </div>

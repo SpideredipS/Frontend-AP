@@ -36,8 +36,7 @@
     
 </section>
 
-<!--Modal para agregar cursos --> 
-        
+<!--Agregar cursos --> 
 <div class="modal fade" id="addCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addCursosModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -69,8 +68,7 @@
     </div>
 </div> 
 
-<!-- Modal para editar cursos -->
-        
+<!-- Editar cursos -->
 <div class="modal fade" id="updateCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="updateCursosModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -103,24 +101,24 @@
     </div>
 </div>
 
-<!-- Modal para borrar cursos-->
-    <div class="modal fade" id="deleteCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteCursosModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Esta acción eliminará sus cursos en "{{deleteCursos?.establecimiento}}". ¿Desea continuar?</p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">No</button>
-                <button (click)="onDeleteCursos(deleteCursos.id)" type="button" class="btn" data-dismiss="modal">Sí</button>
-                </div>
+<!-- Borrar cursos-->
+<div class="modal fade" id="deleteCursosModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteCursosModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Esta acción eliminará sus cursos en "{{deleteCursos?.establecimiento}}". ¿Desea continuar?</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">No</button>
+            <button (click)="onDeleteCursos(deleteCursos.id)" type="button" class="btn" data-dismiss="modal">Sí</button>
             </div>
         </div>
     </div>
+</div>
 
