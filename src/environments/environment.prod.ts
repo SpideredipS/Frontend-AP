@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://portfolio-jograsso.herokuapp.com'
+  apiBaseUrl: 'https://backend-ap-production-b0fc.up.railway.app'
 };
